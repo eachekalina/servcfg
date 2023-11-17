@@ -3,12 +3,13 @@ package servcfg
 import (
 	"gopkg.in/yaml.v3"
 	"os"
+	"time"
 )
 
 type ServerConfig struct {
 	Host    string
 	Port    int
-	Timeout int `yaml:"timeout,omitempty"`
+	Timeout time.Duration `yaml:"timeout,omitempty"`
 }
 
 func ParseServerConfig(path string) (ServerConfig, error) {
